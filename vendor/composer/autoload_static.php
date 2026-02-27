@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
+class ComposerStaticInit6b6bfbad328e738e16a5d723450a2040
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -579,15 +579,11 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-        'App\\Dtos\\Attributes\\CpfCnpj' => __DIR__ . '/../..' . '/app/Dtos/Attributes/CpfCnpj.php',
         'App\\Dtos\\Auth\\AuthData' => __DIR__ . '/../..' . '/app/Dtos/Auth/AuthData.php',
         'App\\Dtos\\Transaction\\DepositData' => __DIR__ . '/../..' . '/app/Dtos/Transaction/DepositData.php',
         'App\\Dtos\\Transaction\\ReversalData' => __DIR__ . '/../..' . '/app/Dtos/Transaction/ReversalData.php',
         'App\\Dtos\\Transaction\\TransferData' => __DIR__ . '/../..' . '/app/Dtos/Transaction/TransferData.php',
         'App\\Dtos\\User\\UserData' => __DIR__ . '/../..' . '/app/Dtos/User/UserData.php',
-        'App\\Dtos\\User\\UserDateOfBirthData' => __DIR__ . '/../..' . '/app/Dtos/User/UserDateOfBirthData.php',
-        'App\\Dtos\\User\\UserResetPasswordData' => __DIR__ . '/../..' . '/app/Dtos/User/UserResetPasswordData.php',
-        'App\\Dtos\\User\\UserUpdateData' => __DIR__ . '/../..' . '/app/Dtos/User/UserUpdateData.php',
         'App\\Enums\\Traits\\EnumToArray' => __DIR__ . '/../..' . '/app/Enums/Traits/EnumToArray.php',
         'App\\Enums\\TransactionStatus' => __DIR__ . '/../..' . '/app/Enums/TransactionStatus.php',
         'App\\Enums\\TransactionType' => __DIR__ . '/../..' . '/app/Enums/TransactionType.php',
@@ -595,7 +591,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransactionController.php',
-        'App\\Http\\Controllers\\UserAccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserAccountController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -606,9 +602,16 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Resources\\AccountResource' => __DIR__ . '/../..' . '/app/Http/Resources/AccountResource.php',
+        'App\\Http\\Resources\\AccountResourceCollection' => __DIR__ . '/../..' . '/app/Http/Resources/AccountResourceCollection.php',
+        'App\\Http\\Resources\\DepositResource' => __DIR__ . '/../..' . '/app/Http/Resources/DepositResource.php',
+        'App\\Http\\Resources\\ReversalResource' => __DIR__ . '/../..' . '/app/Http/Resources/ReversalResource.php',
+        'App\\Http\\Resources\\TransferResource' => __DIR__ . '/../..' . '/app/Http/Resources/TransferResource.php',
+        'App\\Http\\Resources\\TransferResourceCollection' => __DIR__ . '/../..' . '/app/Http/Resources/TransferResourceCollection.php',
+        'App\\Http\\Resources\\UserResource' => __DIR__ . '/../..' . '/app/Http/Resources/UserResource.php',
+        'App\\Interfaces\\AuthServiceInterface' => __DIR__ . '/../..' . '/app/Interfaces/AuthServiceInterface.php',
         'App\\Interfaces\\TransactionServiceInterface' => __DIR__ . '/../..' . '/app/Interfaces/TransactionServiceInterface.php',
-        'App\\Jobs\\CancelTransactionJob' => __DIR__ . '/../..' . '/app/Jobs/CancelTransactionJob.php',
-        'App\\Jobs\\CreateTransactionJob' => __DIR__ . '/../..' . '/app/Jobs/CreateTransactionJob.php',
+        'App\\Interfaces\\UserServiceInterface' => __DIR__ . '/../..' . '/app/Interfaces/UserServiceInterface.php',
         'App\\Models\\Account' => __DIR__ . '/../..' . '/app/Models/Account.php',
         'App\\Models\\Extract' => __DIR__ . '/../..' . '/app/Models/Extract.php',
         'App\\Models\\Transaction' => __DIR__ . '/../..' . '/app/Models/Transaction.php',
@@ -619,6 +622,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Services\\AuthService' => __DIR__ . '/../..' . '/app/Services/AuthService.php',
         'App\\Services\\TransactionService' => __DIR__ . '/../..' . '/app/Services/TransactionService.php',
         'App\\Services\\UserService' => __DIR__ . '/../..' . '/app/Services/UserService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -736,7 +740,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Database\\Factories\\TransactionFactory' => __DIR__ . '/../..' . '/database/factories/TransactionFactory.php',
         'Database\\Factories\\UserAccountFactory' => __DIR__ . '/../..' . '/database/factories/UserAccountFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
-        'Database\\Seeders\\AccountSeeder' => __DIR__ . '/../..' . '/database/seeders/AccountSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'DateError' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateError.php',
         'DateException' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/DateException.php',
@@ -7261,7 +7264,6 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Termwind\\ValueObjects\\Style' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Style.php',
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
-        'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
@@ -7518,9 +7520,9 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6b6bfbad328e738e16a5d723450a2040::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6b6bfbad328e738e16a5d723450a2040::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6b6bfbad328e738e16a5d723450a2040::$classMap;
 
         }, null, ClassLoader::class);
     }
