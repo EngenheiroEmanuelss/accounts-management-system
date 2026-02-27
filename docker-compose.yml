@@ -1,0 +1,70 @@
+services:
+  api:
+    platform: linux/amd64
+    user: "${UID:-1000}:${GID:-1000}"
+    build:
+      context: .
+      dockerfile: infra/docker/development/api/Dockerfile
+      args:
+        GITHUB_TOKEN: "${GITHUB_TOKEN}"
+    ports:
+      - "9393:8000"
+    environment:
+      HANDLER: public/index.php
+      DOCUMENT_ROOT: public
+    volumes:
+      - .:/var/task
+      - ./storage:/tmp/storage
+    networks:
+      - account-management-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  database:
+    image: mysql:8.0
+    container_name: account-management-database
+    restart: always
+    environment:
+      MYSQL_DATABASE: "account_management"
+      MYSQL_ROOT_PASSWORD: "123123123"
+    ports:
+      - "3406:3306"
+    volumes:
+      - ./.tmp/docker/mysql:/var/lib/mysql
+      - ./infra/docker/development/mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - account-management-network
+
+  cache:
+    image: redis:6.2
+    container_name: account-management-client-cache
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning
+    ports:
+      - '6383:6379'
+    volumes:
+      - ./.tmp/docker/redis:/data
+    networks:
+      - account-management-network
+
+  cli:
+    build:
+      context: .
+      dockerfile: infra/docker/development/api/Dockerfile
+      args:
+        GITHUB_TOKEN: "${GITHUB_TOKEN}"
+    command: 'php -v'
+    container_name: account-management-client-cli
+    stdin_open: true # docker run -i
+    tty: true        # docker run -
+    volumes:
+      - .:/var/task
+      - ./storage:/tmp/storage
+    networks:
+      - account-management-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  account-management-network:
+    driver: bridge
